@@ -2,26 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-<script>
-    let Circle = function(radius) {
-
-        this.radius = radius;
-
-    };
-    this.getRadius = function() {
-        return radius;
-    }
-    this.getArea = function() {
-        return Math.PI * radius * radius;
-    }
-    let circle = new Circle(2);
-    let radius = circle.getRadius();
-
-    let area = circle.getArea();
-    alert("radius: " + radius + "; area: " + area);
-</script>
+<canvas id="myCanvas" width="1000" height="500" style="border:1px solid #d3d3d3;">
+    <script>
+        function Circle(x,y,radius,color){
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+            this.color = color;
+            this.render = function(id) {
+                let ctx = document.getElementById(id).getContext("2d");
+                ctx.beginPath();
+                ctx.fillStyle = this.color;
+                ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+                ctx.fill();
+            }
+        }
+        let myCircle = new Circle(10,10,100,"#000000")
+        myCircle.render("myCanvas");
+    </script>
+</canvas>
 </body>
 </html>
