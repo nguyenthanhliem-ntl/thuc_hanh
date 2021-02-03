@@ -7,23 +7,23 @@
 </head>
 <body>
 <canvas id="myCanvas" width="1000" height="500" style="border:1px solid #d3d3d3;">
-    <script>
-        function Circle(x,y,radius,color){
-            this.x = x;
-            this.y = y;
-            this.radius = radius;
-            this.color = color;
-            this.render = function(id) {
-                let ctx = document.getElementById(id).getContext("2d");
-                ctx.beginPath();
-                ctx.fillStyle = this.color;
-                ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
-                ctx.fill();
-            }
+<script>
+    function Circle(x,y,radius,color){
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+        this.color = color;
+        this.render = function(id) {
+            let ctx = document.getElementById(id).getContext("2d");
+            ctx.beginPath();
+            ctx.fillStyle = this.color;
+            ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+            ctx.fill();
         }
-        let myCircle = new Circle(10,10,100,"#000000")
-        myCircle.render("myCanvas");
-    </script>
+    }
+    let myCircle = new Circle(10,10,100,"#000000")
+    myCircle.render("myCanvas");
+</script>
 </canvas>
 </body>
 </html>
